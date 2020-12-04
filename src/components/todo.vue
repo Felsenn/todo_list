@@ -2,6 +2,7 @@
     <span class="todo-text" :style="{ backgroundColor: todoColour()}">{{ todo.text }}</span>
     <span class="todo-date" :style="{ backgroundColor: todoColour()}">{{ todo.date.format('MM-DD-YYYY') }}</span>
     <button class="todo-remove-button" v-on:click="remove">Remove</button>
+    <button>Done</button>
 </template>
 
 <script>

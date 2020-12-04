@@ -31,16 +31,16 @@
 
 <script>
 import datepicker from ' ./components/datepicker.vue'
-import todo from ' ./src/components/todo.vue'
-import Todo from './components/todo.vue';
+import Todo from './components/todo.vue'
+
 export default {
 
   name: "App",
   components: {
-    datepicker
+    datepicker,
+    todo
   },
-    Todo
-  ,data() {
+  data() {
     return {
       newTodoText: "",
       newTodoDate: "",
@@ -58,6 +58,8 @@ export default {
           done: false
         });
 
+        this.todos.sort((todoA, todoB) => -todoA.date.diff(todoB.date))
+
         this.newTodoText = "";
       }
     },
@@ -67,10 +69,10 @@ export default {
     },
     dateUpdated (date) { 
       this.newTodoDate = date.clone()
-    },
-    this:todos.sort((todoA, todoB) => -todoA.date.diff(todoB.date))
+    
     }
-  };
+  },
+};
 </script>
 
 <style>
